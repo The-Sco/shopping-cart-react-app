@@ -1,0 +1,52 @@
+:root {
+  --text-base: #060606;
+  --text-secondary: #1a191b;
+  --element-bg: #e1e1e1;
+
+  --step--3: clamp(0.6rem, 0.7rem + 0.08vw, 0.9rem);
+  --step--2: clamp(0.7rem, 0.85rem + 0.095vw, 1.1rem);
+  --step--1: clamp(0.9rem, 1rem + 0.1vw, 1.25rem);
+  --step-0: clamp(1.125rem, 1.1rem + 0.125vw, 1.25rem);
+  --step-1: clamp(1.35rem, 1.3075rem + 0.2125vw, 1.5625rem);
+  --step-2: clamp(1.62rem, 1.5534rem + 0.3331vw, 1.9531rem);
+  --step-3: clamp(1.944rem, 1.8445rem + 0.4974vw, 2.4414rem);
+
+  --padding: 4rem;
+}
+
+body {
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-base);
+}
+
+p,
+a {
+  color: var(--text-secondary);
+  font-size: var(--step-0);
+}
