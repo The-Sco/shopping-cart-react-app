@@ -28,11 +28,27 @@ function Homepage() {
                 state={{ category: item.name }}
                 key={item.id}
               >
-                <img src={item.image} alt={item.name} />
+                <img src={item.image} alt="" />
                 <h3>{item.name}</h3>
               </Link>
             );
           })}
+        </div>
+      </section>
+      <section className={styles["newsletter-section"]}>
+        <div>
+          <h2 className={styles["newsletter-text"]}>
+            Stay in Loop for Exclusive Offers!
+          </h2>
+          <p className={styles["newsletter-text"]}>
+            Subscribe to our newsletter to be the first to recive exclucive
+            offers. Dicover what's trending and decorate your dream space with
+            us.
+          </p>
+        </div>
+        <div className={styles["newsletter-input"]}>
+          <input type="email" placeholder="Enter your email" />
+          <button>Subscribe</button>
         </div>
       </section>
     </main>

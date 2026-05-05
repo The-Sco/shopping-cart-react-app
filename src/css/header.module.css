@@ -2,33 +2,43 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  margin-bottom: 3rem;
+}
+
+.header__content {
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 2rem;
-  padding: 1rem var(--padding);
   background-color: white;
-  border-radius: 0 0 40px 40px;
+  padding: 1.5rem 2rem;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-  margin: var(--padding);
-  margin-top: 0;
   background-color: #e1e1e1;
 }
 
-.header h1 {
+.header__content h1 {
   font-size: var(--step-2);
   margin: 0;
 }
 
-.header nav ul {
+.header__content nav ul {
   display: flex;
   gap: 1rem;
 }
 
-.header nav a {
+.header__content nav a {
   font-size: var(--step-0);
 }
 
-.header nav a:hover {
+.header__content nav a:hover {
   text-decoration: underline;
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 600px) {
+  .header__content {
+    gap: 2rem;
+    justify-content: space-between;
+  }
 }

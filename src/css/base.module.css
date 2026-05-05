@@ -14,6 +14,11 @@
   --padding: 4rem;
 }
 
+*:focus-visible {
+  outline: 3px solid rgb(0, 60, 255);
+  outline-offset: 2px;
+}
+
 body {
   margin: 0;
   font-family:
@@ -49,4 +54,18 @@ p,
 a {
   color: var(--text-secondary);
   font-size: var(--step-0);
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 1200px) {
+  :root {
+    --padding: 2rem;
+  }
+}
+
+@media (max-width: 425px) {
+  :root {
+    --padding: 1rem;
+  }
 }

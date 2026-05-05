@@ -12,13 +12,13 @@ function Footer() {
             <p className={styles["footer__follow-us"]}>Follow us</p>
             <ul>
               <li>
-                <i class="fa-brands fa-facebook" />
+                <i className="fa-brands fa-facebook" />
               </li>
               <li>
-                <i class="fa-brands fa-square-instagram" />
+                <i className="fa-brands fa-square-instagram" />
               </li>
               <li>
-                <i class="fa-brands fa-x-twitter" />
+                <i className="fa-brands fa-x-twitter" />
               </li>
             </ul>
           </div>

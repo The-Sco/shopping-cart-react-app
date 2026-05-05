@@ -2,27 +2,27 @@ const categories = [
   {
     id: 1,
     name: "Furniture",
-    image: "../categories/furniture.webp",
+    image: "../homepage/categories/furniture.webp",
   },
   {
     id: 2,
     name: "Vase",
-    image: "../categories/vase.webp",
+    image: "../homepage/categories/vase.webp",
   },
   {
     id: 3,
     name: "Lighting",
-    image: "../categories/lighting.webp",
+    image: "../homepage/categories/lighting.webp",
   },
   {
     id: 4,
     name: "Candle",
-    image: "../categories/candle.webp",
+    image: "../homepage/categories/candle.webp",
   },
   {
     id: 5,
     name: "Art",
-    image: "../categories/art.webp",
+    image: "../homepage/categories/art.webp",
   },
 ];
 
