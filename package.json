@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "react-dom": "^19.2.5",
+    "react-focus-lock": "^2.13.7"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

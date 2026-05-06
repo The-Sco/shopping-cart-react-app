@@ -1,0 +1,27 @@
+.dialog {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  z-index: 20;
+}
+
+.dialog-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.dialog img {
+  height: 300px;
+}
+
+.dialog-overlay {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}

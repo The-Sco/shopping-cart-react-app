@@ -1,16 +1,15 @@
 import { Navigate } from "react-router";
 import App from "./App";
 import Homepage from "./components/Homepage";
+import Shop from "./components/shop/Shop";
 
 const routes = [
   {
     path: "/",
-    element: <App />, // Твой главный компонент с <Outlet />
+    element: <App />,
     children: [
       {
-        // Когда путь точно "/", рендерим этот "пустой" маршрут
         index: true,
-        // Navigate автоматически перекинет браузер на /homepage
         element: <Navigate to="/homepage" replace />,
       },
       {
@@ -18,8 +17,12 @@ const routes = [
         element: <Homepage />,
       },
       {
-        path: "about",
-        element: <App />,
+        path: "shop/:category",
+        element: <Shop />,
+      },
+      {
+        path: "shop",
+        element: <Navigate to="all" />,
       },
     ],
   },

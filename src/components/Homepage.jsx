@@ -23,7 +23,7 @@ function Homepage() {
           {data.map((item) => {
             return (
               <Link
-                to="/shop"
+                to={`/shop/${item.name.toLowerCase()}`}
                 className={styles.category}
                 state={{ category: item.name }}
                 key={item.id}
