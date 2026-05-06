@@ -1,8 +1,13 @@
 import { Link } from "react-router";
+import { useEffect } from "react";
 import data from "../data/categories.js";
 import styles from "../css/homepage.module.css";
 
 function Homepage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main>
       <section className={styles.hero}>

@@ -2,6 +2,7 @@
   --text-base: #060606;
   --text-secondary: #1a191b;
   --element-bg: #e1e1e1;
+  --red-accent: rgb(225, 44, 44);
 
   --step--3: clamp(0.6rem, 0.7rem + 0.08vw, 0.9rem);
   --step--2: clamp(0.7rem, 0.85rem + 0.095vw, 1.1rem);

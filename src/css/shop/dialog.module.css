@@ -24,13 +24,21 @@
 }
 
 .dialog img {
-  width: 300px;
+  max-width: 300px;
   border-radius: 22px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
 }
 
 .dialog__info * {
   margin: 0;
+}
+
+.dialog__info p {
+  font-size: var(--step-0);
+}
+
+.dialog__info h2 {
+  font-size: var(--step-1);
 }
 
 .dialog__info {
@@ -40,45 +48,19 @@
   margin: 1rem 0;
 }
 
-.dialog__quantity {
-  display: flex;
-  max-width: min-content;
-  border: 1px solid var(--text-base);
-  max-width: min-content;
-}
-
-.dialog__quantity input {
-  border: none;
-  padding: 0.3rem 0.5rem;
-  max-width: 50px;
-  text-align: center;
-  border-radius: 6px;
-  outline: none;
-}
-
-.dialog__quantity button {
-  border: none;
-  padding: 0.2rem 0.4rem;
-}
-.dialog__quantity button:nth-child(1) {
-  border-right: 1px solid var(--text-base);
-}
-
-.dialog__quantity button:nth-child(3) {
-  border-left: 1px solid var(--text-base);
-}
-
 .dialog__buttons-wrapper {
   margin-top: 0.8rem;
   display: flex;
+  flex-wrap: wrap;
   gap: 0.4rem;
 }
 
 .dialog__button {
   color: white;
+  font-size: var(--step--1);
   background-color: var(--text-base);
   border: none;
-  border-radius: 16px;
+  border-radius: 20px;
   padding: 0.5rem 0.8rem;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
@@ -89,6 +71,52 @@
   opacity: 1;
 }
 
-/* * {
-  border: 1px solid rgba(255, 0, 0, 0.49);
-} */
+.dialog__button:disabled {
+  opacity: 0.7;
+  cursor: unset;
+}
+
+/* Responsive adjustments */
+
+@media (min-width: 1600px) {
+  .dialog img {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 420px) {
+  .dialog {
+    padding: 0.8rem;
+  }
+
+  .dialog img {
+    width: unset;
+  }
+
+  .dialog__info {
+    margin: 0.5rem 0;
+  }
+
+  .dialog__buttons-wrapper {
+    flex-direction: column;
+  }
+
+  .dialog__buttons-wrapper button {
+    font-size: var(--step--1);
+  }
+}
+
+@media (max-height: 615px) Or (max-width: 380px) {
+  .dialog img {
+    object-fit: cover;
+    width: 100%;
+    max-width: unset;
+    max-height: 200px;
+  }
+}
+
+@media (max-height: 500px) And (max-width: 430px) {
+  .dialog img {
+    max-height: 150px;
+  }
+}

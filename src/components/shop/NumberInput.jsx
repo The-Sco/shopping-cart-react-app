@@ -1,3 +1,5 @@
+import styles from "../../css/custom-components/numberInput.module.css";
+
 function NumberInput({ number, setNumber, name, className }) {
   const numbers = "1234567890";
   const handleIncrement = () => {
@@ -20,8 +22,7 @@ function NumberInput({ number, setNumber, name, className }) {
         })
         .join("");
       const n = Number(string);
-      const result = n > 0 ? n : 1;
-      setNumber(result);
+      setNumber(n);
     }
 
     if (numbers.includes(key)) {
@@ -32,7 +33,7 @@ function NumberInput({ number, setNumber, name, className }) {
   };
 
   return (
-    <div className={className}>
+    <div className={`${styles.quantity} ${className}`}>
       <button
         className="number-input__decrement"
         aria-label="Minus 1"

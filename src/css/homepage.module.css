@@ -133,7 +133,7 @@
 }
 
 .newsletter-section > * {
-  z-index: 10;
+  z-index: 5;
 }
 
 .newsletter-section::before {

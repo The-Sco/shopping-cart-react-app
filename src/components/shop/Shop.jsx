@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import getProducts from "../../data/products.js";
 import ProductCard from "./ProductCard.jsx";
 import AddToCartModal from "./AddToCartModal.jsx";
@@ -21,6 +21,10 @@ function Shop() {
   const params = useParams();
   const category = params.category || "All";
   const products = getProducts(category);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const content = products.map((product) => {
     return (
@@ -76,7 +80,7 @@ function Shop() {
       </section>
       <section className={styles.section}>
         <div>
-          <h2>Products</h2>
+          <h2>Products: {products.length} results</h2>
         </div>
         <div
           className={

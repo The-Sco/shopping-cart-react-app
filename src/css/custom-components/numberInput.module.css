@@ -1,0 +1,42 @@
+.quantity {
+  display: flex;
+  max-width: min-content;
+  border: 1px solid var(--text-base);
+  border-radius: 10px;
+  max-width: min-content;
+}
+
+.quantity > * {
+  font-size: var(--step--2);
+}
+
+.quantity input {
+  background-color: white;
+  border: none;
+  padding: 0.3rem 0.5rem;
+  max-width: 60px;
+  text-align: center;
+  border-radius: 6px;
+  outline: none;
+}
+
+.quantity button {
+  border: none;
+  background-color: white;
+  padding: 0.2rem 0.4rem;
+  cursor: pointer;
+}
+
+.quantity button:hover {
+  background-color: var(--element-bg);
+}
+
+.quantity button:nth-child(1) {
+  border-right: 1px solid var(--text-base);
+  border-radius: 10px 0 0 10px;
+}
+
+.quantity button:nth-child(3) {
+  border-left: 1px solid var(--text-base);
+  border-radius: 0 10px 10px 0;
+}

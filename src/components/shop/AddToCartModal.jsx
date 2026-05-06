@@ -27,7 +27,7 @@ function AddToCartModal({ product, setModalOpen }) {
     }
   };
 
-  function handleAddTocCart() {
+  function handleAddToCart() {
     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
     let isInCart = false;
     let isEmtpy = cartItems.length === 0;
@@ -42,7 +42,7 @@ function AddToCartModal({ product, setModalOpen }) {
     if (!isEmtpy) {
       cartItems.forEach((item) => {
         if (item.product.id === product.id) {
-          item.quantity = number;
+          item.quantity += number;
           isInCart = true;
         }
       });
@@ -59,6 +59,7 @@ function AddToCartModal({ product, setModalOpen }) {
     }
 
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    window.dispatchEvent(new Event("cartUpdated"));
     setModalOpen(false);
   }
 
@@ -81,15 +82,15 @@ function AddToCartModal({ product, setModalOpen }) {
               </div>
               <div className={styles["dialog__controls"]}>
                 <NumberInput
-                  className={styles["dialog__quantity"]}
                   name="Quantity"
                   number={number}
                   setNumber={setNumber}
                 ></NumberInput>
                 <div className={styles["dialog__buttons-wrapper"]}>
                   <button
+                    disabled={number === 0}
                     className={styles["dialog__button"]}
-                    onClick={handleAddTocCart}
+                    onClick={handleAddToCart}
                   >
                     Add to cart
                   </button>
