@@ -26,6 +26,10 @@ body {
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+main {
+  flex-grow: 1;
+}
+
 a {
   text-decoration: none;
   color: inherit;

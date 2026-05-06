@@ -1,8 +1,8 @@
 import { useParams, Link } from "react-router";
 import { useState } from "react";
 import getProducts from "../../data/products.js";
-import LikeButton from "./LikeButton.jsx";
-import CartButton from "./AddToCartButton.jsx";
+import ProductCard from "./ProductCard.jsx";
+import styles from "../../css/shop/shop.module.css";
 
 function formatTitle(str) {
   const words = str.split("");
@@ -18,50 +18,27 @@ function Shop() {
   const category = params.category || "All";
   const products = getProducts(category);
 
-  const handleLike = (productId) => {
-    let updatedLikedIDs;
-    if (likedIDs.includes(productId)) {
-      updatedLikedIDs = likedIDs.filter((id) => id !== productId);
-    } else {
-      updatedLikedIDs = [...likedIDs, productId];
-    }
-    localStorage.setItem("likedProducts", JSON.stringify(updatedLikedIDs));
-    setLikedIDs(updatedLikedIDs);
-  };
-
   const content = products.map((product) => {
     return (
-      <div key={product.id}>
-        <div>
-          <img src={product.image} alt="" />
-        </div>
-        <div>
-          <div>
-            <h3>{product.name}</h3>
-            <p>{product.price}</p>
-          </div>
-          <div>
-            <LikeButton
-              productId={product.id}
-              likedIDs={likedIDs}
-              onLike={handleLike}
-              className="like-button"
-            />
-            <CartButton product={product} className="cart-button" />
-          </div>
-        </div>
-      </div>
+      <ProductCard
+        key={product.id}
+        product={product}
+        likedIDs={likedIDs}
+        setLikedIDs={setLikedIDs}
+      ></ProductCard>
     );
   });
 
   return (
     <main>
-      <section>
+      <section className={styles.hero}>
         <div>
-          <h2>{formatTitle(category)}</h2>
+          <h2 className={styles["hero__title"]}>
+            Category: {formatTitle(category)}
+          </h2>
         </div>
         <div>
-          <nav>
+          <nav className={styles["hero__nav"]}>
             <ul>
               <li>
                 <Link to="/shop/all">All</Link>
@@ -85,11 +62,15 @@ function Shop() {
           </nav>
         </div>
       </section>
-      <section>
+      <section className={styles.section}>
         <div>
           <h2>Products</h2>
         </div>
-        <div>
+        <div
+          className={
+            content.length > 1 ? styles["cards-grid"] : styles["cards-flexbox"]
+          }
+        >
           {content.length > 1 ? (
             content
           ) : (

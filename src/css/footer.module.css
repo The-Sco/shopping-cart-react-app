@@ -2,7 +2,7 @@
   background-color: var(--element-bg);
   padding: 5rem 2rem;
   box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.2);
-  margin-top: 4rem;
+  margin-top: 6rem;
 }
 
 .footer__content {
@@ -145,6 +145,10 @@
 }
 
 @media (max-width: 520px) {
+  .footer {
+    margin-top: 6rem;
+  }
+
   .footer__brand {
     width: 100%;
     gap: unset;

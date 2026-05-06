@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import FocusLock from "react-focus-lock";
 import NumberInput from "./NumberInput";
-import styles from "../../css/dialog.module.css";
+import styles from "../../css/shop/dialog.module.css";
 
 function AddToCartModal({ product, setModalOpen }) {
   const [number, setNumber] = useState(1);

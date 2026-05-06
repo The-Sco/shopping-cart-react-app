@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AddToCartModal from "./AddToCartModal";
 
-function CartButton({ product }) {
+function CartButton({ product, className }) {
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleClick = () => {
@@ -10,7 +10,11 @@ function CartButton({ product }) {
 
   return (
     <>
-      <button onClick={handleClick}>
+      <button
+        aria-label="Add to cart button"
+        onClick={handleClick}
+        className={className}
+      >
         <i className="fa-solid fa-cart-arrow-down"></i>
       </button>
       {modalOpen && (

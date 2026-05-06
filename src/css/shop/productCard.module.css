@@ -1,0 +1,59 @@
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--element-bg);
+  padding: 0.8rem;
+  border-radius: 24px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.product-card > div > img {
+  max-width: 100%;
+  border-radius: 20px;
+}
+
+.card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.card__info * {
+  margin: 0;
+}
+
+.product-card:hover .card__buttons-wrapper,
+.card__buttons-wrapper:focus-within {
+  opacity: 1;
+}
+
+.card__buttons-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 0.2rem;
+  background-color: var(--element-bg);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--text-base);
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.card__buttons-wrapper button {
+  background-color: transparent;
+  border: none;
+  font-size: var(--step-0);
+  color: var(--text-base);
+  cursor: pointer;
+}
+
+.card__like-button[data-liked="liked"] i {
+  color: rgb(225, 44, 44);
+  transition: color 0.3s ease;
+}
