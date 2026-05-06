@@ -1,10 +1,6 @@
-import { useState } from "react";
-import AddToCartModal from "./AddToCartModal";
-
-function CartButton({ product, className }) {
-  const [modalOpen, setModalOpen] = useState(false);
-
+function CartButton({ product, className, setModalOpen, setSelectedProduct }) {
   const handleClick = () => {
+    setSelectedProduct(product);
     setModalOpen(true);
   };
 
@@ -17,9 +13,6 @@ function CartButton({ product, className }) {
       >
         <i className="fa-solid fa-cart-arrow-down"></i>
       </button>
-      {modalOpen && (
-        <AddToCartModal product={product} setModalOpen={setModalOpen} />
-      )}
     </>
   );
 }

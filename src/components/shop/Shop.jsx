@@ -2,18 +2,22 @@ import { useParams, Link } from "react-router";
 import { useState } from "react";
 import getProducts from "../../data/products.js";
 import ProductCard from "./ProductCard.jsx";
+import AddToCartModal from "./AddToCartModal.jsx";
 import styles from "../../css/shop/shop.module.css";
 
 function formatTitle(str) {
-  const words = str.split("");
-  words[0] = words[0].toUpperCase();
-  return words.join("");
+  const letters = str.split("");
+  letters[0] = letters[0].toUpperCase();
+  return letters.join("");
 }
 
 function Shop() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const [likedIDs, setLikedIDs] = useState(
     JSON.parse(localStorage.getItem("likedProducts")) || [],
   );
+
   const params = useParams();
   const category = params.category || "All";
   const products = getProducts(category);
@@ -25,12 +29,20 @@ function Shop() {
         product={product}
         likedIDs={likedIDs}
         setLikedIDs={setLikedIDs}
+        setModalOpen={setModalOpen}
+        setSelectedProduct={setSelectedProduct}
       ></ProductCard>
     );
   });
 
   return (
     <main>
+      {modalOpen && (
+        <AddToCartModal
+          product={selectedProduct}
+          setModalOpen={setModalOpen}
+        ></AddToCartModal>
+      )}
       <section className={styles.hero}>
         <div>
           <h2 className={styles["hero__title"]}>

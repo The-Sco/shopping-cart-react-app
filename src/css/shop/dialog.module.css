@@ -1,20 +1,4 @@
-.dialog {
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 8px;
-  z-index: 20;
-}
-
-.dialog-wrapper {
-  display: flex;
-  align-items: center;
-}
-
-.dialog img {
-  height: 300px;
-}
-
-.dialog-overlay {
+.dialog__overlay {
   position: fixed;
   display: flex;
   align-items: center;
@@ -25,3 +9,86 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 10;
 }
+
+.dialog-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.dialog {
+  border: none;
+  background-color: var(--element-bg);
+  padding: 1.2rem;
+  border-radius: 28px;
+  z-index: 20;
+}
+
+.dialog img {
+  width: 300px;
+  border-radius: 22px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dialog__info * {
+  margin: 0;
+}
+
+.dialog__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin: 1rem 0;
+}
+
+.dialog__quantity {
+  display: flex;
+  max-width: min-content;
+  border: 1px solid var(--text-base);
+  max-width: min-content;
+}
+
+.dialog__quantity input {
+  border: none;
+  padding: 0.3rem 0.5rem;
+  max-width: 50px;
+  text-align: center;
+  border-radius: 6px;
+  outline: none;
+}
+
+.dialog__quantity button {
+  border: none;
+  padding: 0.2rem 0.4rem;
+}
+.dialog__quantity button:nth-child(1) {
+  border-right: 1px solid var(--text-base);
+}
+
+.dialog__quantity button:nth-child(3) {
+  border-left: 1px solid var(--text-base);
+}
+
+.dialog__buttons-wrapper {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.dialog__button {
+  color: white;
+  background-color: var(--text-base);
+  border: none;
+  border-radius: 16px;
+  padding: 0.5rem 0.8rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  opacity: 0.95;
+}
+
+.dialog__button:hover {
+  opacity: 1;
+}
+
+/* * {
+  border: 1px solid rgba(255, 0, 0, 0.49);
+} */

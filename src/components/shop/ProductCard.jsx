@@ -2,7 +2,13 @@ import LikeButton from "./LikeButton";
 import CartButton from "./AddToCartButton";
 import styles from "../../css/shop/productCard.module.css";
 
-function ProductCard({ product, likedIDs, setLikedIDs }) {
+function ProductCard({
+  product,
+  likedIDs,
+  setLikedIDs,
+  setModalOpen,
+  setSelectedProduct,
+}) {
   return (
     <div key={product.id} className={styles["product-card"]}>
       <div>
@@ -23,6 +29,8 @@ function ProductCard({ product, likedIDs, setLikedIDs }) {
           <CartButton
             product={product}
             className={styles["card__cart-button"]}
+            setModalOpen={setModalOpen}
+            setSelectedProduct={setSelectedProduct}
           />
         </div>
       </div>

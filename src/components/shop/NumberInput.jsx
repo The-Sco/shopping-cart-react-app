@@ -1,4 +1,4 @@
-function NumberInput({ number, setNumber }) {
+function NumberInput({ number, setNumber, name, className }) {
   const numbers = "1234567890";
   const handleIncrement = () => {
     setNumber(number + 1);
@@ -32,20 +32,29 @@ function NumberInput({ number, setNumber }) {
   };
 
   return (
-    <div>
-      <button name="Minus 1" onClick={handleDecrement}>
+    <div className={className}>
+      <button
+        className="number-input__decrement"
+        aria-label="Minus 1"
+        onClick={handleDecrement}
+      >
         -
       </button>
       <input
+        className="number-input"
         type="text"
         inputMode="numeric"
-        name="Quantity"
+        aria-label={name}
         pattern="\d*"
         value={number}
         onKeyDown={handleChange}
         readOnly
       />
-      <button name="Plus 1" onClick={handleIncrement}>
+      <button
+        className="number-input__increment"
+        aria-label="Plus 1"
+        onClick={handleIncrement}
+      >
         +
       </button>
     </div>

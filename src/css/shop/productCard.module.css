@@ -25,7 +25,7 @@
 }
 
 .product-card:hover .card__buttons-wrapper,
-.card__buttons-wrapper:focus-within {
+.card__buttons-wrapper:has(*:focus-visible) {
   opacity: 1;
 }
 

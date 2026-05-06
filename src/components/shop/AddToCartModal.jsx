@@ -22,7 +22,7 @@ function AddToCartModal({ product, setModalOpen }) {
   }, [setModalOpen]);
 
   const handleOverlayClick = ({ target }) => {
-    if (target.classList.contains(styles["dialog-overlay"])) {
+    if (target.classList.contains(styles["dialog__overlay"])) {
       setModalOpen(false);
     }
   };
@@ -62,8 +62,12 @@ function AddToCartModal({ product, setModalOpen }) {
     setModalOpen(false);
   }
 
+  const continueShopping = () => {
+    setModalOpen(false);
+  };
+
   return (
-    <div className={styles["dialog-overlay"]} onClick={handleOverlayClick}>
+    <div className={styles["dialog__overlay"]} onClick={handleOverlayClick}>
       <FocusLock className={styles["dialog-wrapper"]}>
         <dialog open className={styles.dialog}>
           <div>
@@ -71,18 +75,30 @@ function AddToCartModal({ product, setModalOpen }) {
               <img src={product.image} alt="" />
             </div>
             <div>
-              <div>
-                <h2>{product.name}</h2>
+              <div className={styles["dialog__info"]}>
                 <p>{product.price}</p>
+                <h2>{product.name}</h2>
               </div>
-              <div>
+              <div className={styles["dialog__controls"]}>
                 <NumberInput
+                  className={styles["dialog__quantity"]}
+                  name="Quantity"
                   number={number}
                   setNumber={setNumber}
                 ></NumberInput>
-                <div>
-                  <button onClick={handleAddTocCart}>Add to cart</button>
-                  <button>Continue shopping</button>
+                <div className={styles["dialog__buttons-wrapper"]}>
+                  <button
+                    className={styles["dialog__button"]}
+                    onClick={handleAddTocCart}
+                  >
+                    Add to cart
+                  </button>
+                  <button
+                    className={styles["dialog__button"]}
+                    onClick={continueShopping}
+                  >
+                    Continue shopping
+                  </button>
                 </div>
               </div>
             </div>
