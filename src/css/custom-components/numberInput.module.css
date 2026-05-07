@@ -28,7 +28,7 @@
 }
 
 .quantity button:hover {
-  background-color: var(--element-bg);
+  background-color: rgb(210, 210, 210);
 }
 
 .quantity button:nth-child(1) {

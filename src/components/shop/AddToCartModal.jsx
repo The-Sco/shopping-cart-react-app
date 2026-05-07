@@ -68,12 +68,16 @@ function AddToCartModal({ product, setModalOpen }) {
   };
 
   return (
-    <div className={styles["dialog__overlay"]} onClick={handleOverlayClick}>
+    <div
+      data-testid="modal-overlay"
+      className={styles["dialog__overlay"]}
+      onClick={handleOverlayClick}
+    >
       <FocusLock className={styles["dialog-wrapper"]}>
-        <dialog open className={styles.dialog}>
+        <dialog open aria-label="Add to cart dialog" className={styles.dialog}>
           <div>
             <div>
-              <img src={product.image} alt="" />
+              <img data-testid="modal-image" src={product.image} alt="" />
             </div>
             <div>
               <div className={styles["dialog__info"]}>

@@ -12,7 +12,7 @@
   gap: 1rem;
   background-color: white;
   padding: 1rem var(--padding);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   background-color: #e1e1e1;
 }
 
@@ -30,7 +30,8 @@
   font-size: var(--step-0);
 }
 
-.header__content nav a:hover {
+.header__content nav a:hover,
+.header__content nav a:focus-visible {
   text-decoration: underline;
 }
 
@@ -55,11 +56,13 @@
   margin: 0 0.3rem;
 }
 
-.header__cart-link:hover {
+.header__cart-link:hover,
+.header__cart-link:focus-visible {
   text-decoration: none !important;
 }
 
-.header__cart-link:hover .header__cart-link-text {
+.header__cart-link:hover .header__cart-link-text,
+.header__cart-link:focus-visible .header__cart-link-text {
   text-decoration: underline;
 }
 

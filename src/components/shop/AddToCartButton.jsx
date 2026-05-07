@@ -1,4 +1,4 @@
-function CartButton({ product, className, setModalOpen, setSelectedProduct }) {
+function CartButton({ product, setModalOpen, setSelectedProduct, className }) {
   const handleClick = () => {
     setSelectedProduct(product);
     setModalOpen(true);
@@ -7,6 +7,7 @@ function CartButton({ product, className, setModalOpen, setSelectedProduct }) {
   return (
     <>
       <button
+        data-testid="add-to-cart-button"
         aria-label="Add to cart button"
         onClick={handleClick}
         className={className}

@@ -33,16 +33,29 @@ function Header() {
         <nav>
           <ul>
             <li>
-              <Link to="/homepage">Home</Link>
+              <Link to="/home">Home</Link>
             </li>
             <li>
               <Link to="/shop">Shop</Link>
             </li>
             <li>
-              <Link to="/cart" className={styles["header__cart-link"]}>
-                <span className={styles["header__cart-link-text"]}>Cart</span>
+              <Link
+                to="/cart"
+                className={styles["header__cart-link"]}
+                aria-label={`Cart, ${quantity} items`}
+              >
+                <span
+                  aria-hidden="ture"
+                  className={styles["header__cart-link-text"]}
+                >
+                  Cart
+                </span>
                 {!isEmpty && (
-                  <span className={styles["header__cart-items-quantity"]}>
+                  <span
+                    aria-hidden="true"
+                    data-testid="cart-items-quantity"
+                    className={styles["header__cart-items-quantity"]}
+                  >
                     {formatedStirng}
                   </span>
                 )}

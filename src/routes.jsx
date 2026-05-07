@@ -10,10 +10,10 @@ const routes = [
     children: [
       {
         index: true,
-        element: <Navigate to="/homepage" replace />,
+        element: <Navigate to="/home" replace />,
       },
       {
-        path: "homepage",
+        path: "home",
         element: <Homepage />,
       },
       {

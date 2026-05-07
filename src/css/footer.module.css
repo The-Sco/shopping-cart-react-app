@@ -1,7 +1,7 @@
 .footer {
   background-color: var(--element-bg);
   padding: 5rem 2rem;
-  box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.3);
   margin-top: 6rem;
 }
 
@@ -44,7 +44,8 @@
   cursor: pointer;
 }
 
-.footer__brand i:hover {
+.footer__brand li:hover i,
+.footer__brand li:focus-within i {
   opacity: 1;
 }
 
@@ -79,7 +80,8 @@
   cursor: pointer;
 }
 
-.footer__links-section li:hover {
+.footer__links-section li:hover,
+.footer__links-section li:focus-within {
   text-decoration: underline;
 }
 

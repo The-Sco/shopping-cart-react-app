@@ -12,12 +12,19 @@ function ProductCard({
   return (
     <div key={product.id} className={styles["product-card"]}>
       <div>
-        <img src={product.image} alt="" />
+        <img
+          data-testid="product-card-image"
+          src={product.image}
+          alt=""
+          role="presentation"
+        />
       </div>
       <div>
         <div className={styles["card__info"]}>
-          <p>{product.price}</p>
-          <h3>{product.name}</h3>
+          <p data-testid="product-card-price" aria-label="Price">
+            {product.price}
+          </p>
+          <h3 data-testid="product-card-title">{product.name}</h3>
         </div>
         <div className={styles["card__buttons-wrapper"]}>
           <LikeButton

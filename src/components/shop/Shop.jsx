@@ -11,7 +11,14 @@ function formatTitle(str) {
   return letters.join("");
 }
 
-function Shop() {
+function getTestData(data, category = "all") {
+  if (category === "all") {
+    return Object.values(data).flat();
+  }
+  return data[category];
+}
+
+function Shop({ testData = null }) {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [likedIDs, setLikedIDs] = useState(
@@ -20,11 +27,15 @@ function Shop() {
 
   const params = useParams();
   const category = params.category || "All";
-  const products = getProducts(category);
+  const products =
+    testData !== null ? getTestData(testData, category) : getProducts(category);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    /* eslint-disable-next-line "no-constant-binary-expression" */
+    if (!testData === null) {
+      window.scrollTo(0, 0);
+    }
+  }, [testData]);
 
   const content = products.map((product) => {
     return (
@@ -54,7 +65,7 @@ function Shop() {
           </h2>
         </div>
         <div>
-          <nav className={styles["hero__nav"]}>
+          <nav className={styles["hero__nav"]} aria-label="Category filters">
             <ul>
               <li>
                 <Link to="/shop/all">All</Link>
@@ -82,12 +93,8 @@ function Shop() {
         <div>
           <h2>Products: {products.length} results</h2>
         </div>
-        <div
-          className={
-            content.length > 1 ? styles["cards-grid"] : styles["cards-flexbox"]
-          }
-        >
-          {content.length > 1 ? (
+        <div className={styles["cards-grid"]}>
+          {content.length > 0 ? (
             content
           ) : (
             <p>No products found in this category.</p>

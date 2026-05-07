@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import styles from "../css/footer.module.css";
 
 function Footer() {
@@ -12,13 +13,19 @@ function Footer() {
             <p className={styles["footer__follow-us"]}>Follow us</p>
             <ul>
               <li>
-                <i className="fa-brands fa-facebook" />
+                <Link to="/home" aria-label="Facebook">
+                  <i className="fa-brands fa-facebook" />
+                </Link>
               </li>
               <li>
-                <i className="fa-brands fa-square-instagram" />
+                <Link to="/home" aria-label="Instagram">
+                  <i className="fa-brands fa-square-instagram" />
+                </Link>
               </li>
               <li>
-                <i className="fa-brands fa-x-twitter" />
+                <Link to="/home" aria-label="Twitter">
+                  <i className="fa-brands fa-x-twitter" />
+                </Link>
               </li>
             </ul>
           </div>
@@ -27,27 +34,49 @@ function Footer() {
           <div className={styles["footer__links-section"]}>
             <h3>Customer Service</h3>
             <ul>
-              <li>Help & Contact Us</li>
-              <li>Orders & Shipping</li>
-              <li>Payment</li>
-              <li>Returns & Refunds</li>
-              <li>FAQs</li>
+              <li>
+                <Link to="/home">Help & Contact Us</Link>
+              </li>
+              <li>
+                <Link to="/home">Orders & Shipping</Link>
+              </li>
+              <li>
+                <Link to="/home">Payment</Link>
+              </li>
+              <li>
+                <Link to="/home">Returns & Refunds</Link>
+              </li>
+              <li>
+                <Link to="/home">FAQs</Link>
+              </li>
             </ul>
           </div>
           <div className={styles["footer__links-section"]}>
             <h3>About Us</h3>
             <ul>
-              <li>About us</li>
-              <li>Showrooms</li>
-              <li>Shops</li>
+              <li>
+                <Link to="/home">About us</Link>
+              </li>
+              <li>
+                <Link to="/home">Showrooms</Link>
+              </li>
+              <li>
+                <Link to="/home">Shops</Link>
+              </li>
             </ul>
           </div>
           <div className={styles["footer__links-section"]}>
             <h3>Legal</h3>
             <ul>
-              <li>Terms & Conditions</li>
-              <li>Privacy Policy</li>
-              <li>Cookie Policy</li>
+              <li>
+                <Link to="/home">Terms & Conditions</Link>
+              </li>
+              <li>
+                <Link to="/home">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link to="/home">Cookie Policy</Link>
+              </li>
             </ul>
           </div>
         </div>

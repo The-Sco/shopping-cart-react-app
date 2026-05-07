@@ -33,8 +33,9 @@ function NumberInput({ number, setNumber, name, className }) {
   };
 
   return (
-    <div className={`${styles.quantity} ${className}`}>
+    <div aria-label={name} className={`${styles.quantity} ${className}`}>
       <button
+        data-testid="decrement-button"
         className="number-input__decrement"
         aria-label="Minus 1"
         onClick={handleDecrement}
@@ -45,13 +46,13 @@ function NumberInput({ number, setNumber, name, className }) {
         className="number-input"
         type="text"
         inputMode="numeric"
-        aria-label={name}
         pattern="\d*"
         value={number}
         onKeyDown={handleChange}
         readOnly
       />
       <button
+        data-testid="increment-button"
         className="number-input__increment"
         aria-label="Plus 1"
         onClick={handleIncrement}

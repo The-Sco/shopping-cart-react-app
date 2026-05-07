@@ -18,6 +18,7 @@ function LikeButton({ productId, likedIDs, setLikedIDs, className }) {
 
   return (
     <button
+      data-testid="like-button"
       aria-label="Like button"
       onClick={handleClick}
       className={className}

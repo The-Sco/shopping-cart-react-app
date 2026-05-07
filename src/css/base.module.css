@@ -12,7 +12,7 @@
   --step-2: clamp(1.62rem, 1.5534rem + 0.3331vw, 1.9531rem);
   --step-3: clamp(1.944rem, 1.8445rem + 0.4974vw, 2.4414rem);
 
-  --padding: 4rem;
+  --padding: 6rem;
 }
 
 *:focus-visible {
@@ -62,6 +62,12 @@ a {
 }
 
 /* Responsive adjustments */
+
+@media (max-width: 1525px) {
+  :root {
+    --padding: 4rem;
+  }
+}
 
 @media (max-width: 1200px) {
   :root {

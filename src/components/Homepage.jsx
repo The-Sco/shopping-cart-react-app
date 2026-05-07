@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import data from "../data/categories.js";
 import styles from "../css/homepage.module.css";
 
-function Homepage() {
+function Homepage({ categories = data }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -25,15 +25,14 @@ function Homepage() {
           <h2>Top Categories</h2>
         </div>
         <div className={styles["categories-grid"]}>
-          {data.map((item) => {
+          {categories.map((item) => {
             return (
               <Link
                 to={`/shop/${item.name.toLowerCase()}`}
                 className={styles.category}
-                state={{ category: item.name }}
                 key={item.id}
               >
-                <img src={item.image} alt="" />
+                <img src={item.image} alt="" role="presentation" />
                 <h3>{item.name}</h3>
               </Link>
             );

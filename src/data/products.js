@@ -6,7 +6,6 @@ const products = {
       price: "$499.99",
       image: "../product/furniture/furniture1.webp",
       category: "Furniture",
-      liked: false,
     },
     {
       id: 2,
@@ -14,7 +13,6 @@ const products = {
       price: "$199.99",
       image: "../product/furniture/furniture2.webp",
       category: "Furniture",
-      liked: false,
     },
     {
       id: 3,
@@ -22,7 +20,6 @@ const products = {
       price: "$299.99",
       image: "../product/furniture/furniture3.webp",
       category: "Furniture",
-      liked: false,
     },
     {
       id: 4,
@@ -30,7 +27,6 @@ const products = {
       price: "$249.99",
       image: "../product/furniture/furniture4.webp",
       category: "Furniture",
-      liked: false,
     },
     {
       id: 5,
@@ -38,7 +34,6 @@ const products = {
       price: "$149.99",
       image: "../product/furniture/furniture5.webp",
       category: "Furniture",
-      liked: false,
     },
   ],
   vase: [
@@ -48,7 +43,6 @@ const products = {
       price: "$39.99",
       image: "../product/vase/vase1.webp",
       category: "Vase",
-      liked: false,
     },
     {
       id: 7,
@@ -56,7 +50,6 @@ const products = {
       price: "$29.99",
       image: "../product/vase/vase2.webp",
       category: "Vase",
-      liked: false,
     },
     {
       id: 8,
@@ -64,7 +57,6 @@ const products = {
       price: "$49.99",
       image: "../product/vase/vase3.webp",
       category: "Vase",
-      liked: false,
     },
     {
       id: 9,
@@ -72,7 +64,6 @@ const products = {
       price: "$34.99",
       image: "../product/vase/vase4.webp",
       category: "Vase",
-      liked: false,
     },
   ],
   lighting: [
@@ -82,7 +73,6 @@ const products = {
       price: "$89.99",
       image: "../product/lighting/lighting1.webp",
       category: "Lighting",
-      liked: false,
     },
     {
       id: 11,
@@ -90,7 +80,6 @@ const products = {
       price: "$59.99",
       image: "../product/lighting/lighting2.webp",
       category: "Lighting",
-      liked: false,
     },
     {
       id: 12,
@@ -98,7 +87,6 @@ const products = {
       price: "$129.99",
       image: "../product/lighting/lighting3.webp",
       category: "Lighting",
-      liked: false,
     },
     {
       id: 13,
@@ -106,7 +94,6 @@ const products = {
       price: "$49.99",
       image: "../product/lighting/lighting4.webp",
       category: "Lighting",
-      liked: false,
     },
   ],
   candle: [],
@@ -117,7 +104,6 @@ const products = {
       price: "$199.99",
       image: "../product/art/art1.webp",
       category: "Art",
-      liked: false,
     },
     {
       id: 15,
@@ -125,7 +111,6 @@ const products = {
       price: "$299.99",
       image: "../product/art/art2.webp",
       category: "Art",
-      liked: false,
     },
     {
       id: 16,
@@ -133,7 +118,6 @@ const products = {
       price: "$149.99",
       image: "../product/art/art3.webp",
       category: "Art",
-      liked: false,
     },
     {
       id: 17,
@@ -141,7 +125,6 @@ const products = {
       price: "$89.99",
       image: "../product/art/art4.webp",
       category: "Art",
-      liked: false,
     },
     {
       id: 18,
@@ -149,7 +132,6 @@ const products = {
       price: "$49.99",
       image: "../product/art/art5.webp",
       category: "Art",
-      liked: false,
     },
   ],
 };
