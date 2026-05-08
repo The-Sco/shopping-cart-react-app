@@ -1,4 +1,4 @@
-import LikeButton from "./LikeButton";
+import LikeButton from "../reusable/LikeButton";
 import CartButton from "./AddToCartButton";
 import styles from "../../css/shop/productCard.module.css";
 
@@ -10,7 +10,11 @@ function ProductCard({
   setSelectedProduct,
 }) {
   return (
-    <div key={product.id} className={styles["product-card"]}>
+    <div
+      data-testid="product-card"
+      key={product.id}
+      className={styles["product-card"]}
+    >
       <div>
         <img
           data-testid="product-card-image"

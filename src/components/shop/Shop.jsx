@@ -29,12 +29,12 @@ function Shop({ testData = null }) {
   const category = params.category || "All";
   const products =
     testData !== null ? getTestData(testData, category) : getProducts(category);
+  const hasContent = products.length > 0;
 
   useEffect(() => {
     /* eslint-disable-next-line "no-constant-binary-expression" */
-    if (!testData === null) {
-      window.scrollTo(0, 0);
-    }
+    if (!testData === null) return;
+    window.scrollTo(0, 0);
   }, [testData]);
 
   const content = products.map((product) => {
@@ -93,11 +93,18 @@ function Shop({ testData = null }) {
         <div>
           <h2>Products: {products.length} results</h2>
         </div>
-        <div className={styles["cards-grid"]}>
-          {content.length > 0 ? (
+        <div
+          className={hasContent ? styles["cards-grid"] : styles["no-content"]}
+        >
+          {hasContent ? (
             content
           ) : (
-            <p>No products found in this category.</p>
+            <div className={styles["message-wrapper"]}>
+              <p className={styles["message"]}>
+                No items found in this category
+              </p>
+              <i className="fa-solid fa-circle-question"></i>
+            </div>
           )}
         </div>
       </section>

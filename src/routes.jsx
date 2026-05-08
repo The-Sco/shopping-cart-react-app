@@ -1,7 +1,8 @@
 import { Navigate } from "react-router";
 import App from "./App";
-import Homepage from "./components/Homepage";
+import Homepage from "./components/homepage/Homepage";
 import Shop from "./components/shop/Shop";
+import Cart from "./components/cart/Cart";
 
 const routes = [
   {
@@ -23,6 +24,10 @@ const routes = [
       {
         path: "shop",
         element: <Navigate to="all" />,
+      },
+      {
+        path: "cart",
+        element: <Cart />,
       },
     ],
   },

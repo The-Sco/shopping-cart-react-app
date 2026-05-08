@@ -40,3 +40,17 @@
   border-left: 1px solid var(--text-base);
   border-radius: 0 10px 10px 0;
 }
+
+/* Responsive adjustments */
+
+@media (max-width: 850px) {
+  .quantity button {
+    font-size: var(--step--3);
+    padding: 0.1rem 0.4rem;
+  }
+
+  .quantity input {
+    font-size: var(--step--2);
+    padding: 0.2rem 0.2rem;
+  }
+}

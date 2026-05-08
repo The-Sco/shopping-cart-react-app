@@ -136,8 +136,14 @@
 
   .footer__brand {
     flex: 1;
-    gap: 2rem;
+    gap: unset;
+    width: 100%;
+
     flex-direction: row;
+  }
+
+  .footer__brand > div:has(p) {
+    margin: 0 auto;
   }
 
   .footer__links {
@@ -152,9 +158,12 @@
   }
 
   .footer__brand {
-    width: 100%;
-    gap: unset;
+    gap: 0;
     justify-content: space-between;
+  }
+
+  .footer__brand > div:has(p) {
+    margin: 0;
   }
 }
 

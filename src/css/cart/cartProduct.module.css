@@ -22,7 +22,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-  margin-top: 0.8rem;
+  margin: 0.8rem 0;
 }
 
 .card__info * {
@@ -62,9 +62,14 @@
   transform: scale(0.9);
 }
 
-.card__like-button[data-liked="liked"] i {
+.card__buttons-wrapper button:hover i,
+.card__buttons-wrapper button:focus-visible {
   color: var(--red-accent);
   transition: color 0.3s ease;
+}
+
+.card__number-input {
+  margin-top: auto;
 }
 
 /* Responsive adjustments */

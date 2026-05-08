@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { useEffect } from "react";
-import data from "../data/categories.js";
-import styles from "../css/homepage.module.css";
+import data from "../../data/categories.js";
+import styles from "../../css/homepage/homepage.module.css";
 
 function Homepage({ categories = data }) {
   useEffect(() => {

@@ -1,35 +1,14 @@
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
 .section {
   padding: 0 var(--padding);
 }
 
-.hero {
-  composes: section;
-}
-
-.hero__title {
-  font-size: var(--step-3);
-  margin-top: 0;
-}
-
-.hero__nav ul {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.hero__nav a {
-  font-size: var(--step-1);
-  background-color: var(--text-base);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 40px;
-  opacity: 0.95;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
-  line-height: 1.9;
-}
-
-.hero__nav a:hover {
-  opacity: 1;
+.cart__title {
+  font-size: var(--step-2);
 }
 
 .cards-grid {
@@ -38,7 +17,7 @@
   gap: 2rem;
 }
 
-.no-content {
+.section[data-content="false"] {
   display: flex;
   align-items: center;
   justify-content: center;

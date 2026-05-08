@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import FocusLock from "react-focus-lock";
-import NumberInput from "./NumberInput";
+import NumberInput from "../reusable/NumberInput";
+import saveCartItems from "../../functions/addCartItems.js";
 import styles from "../../css/shop/dialog.module.css";
 
 function AddToCartModal({ product, setModalOpen }) {
@@ -28,38 +29,7 @@ function AddToCartModal({ product, setModalOpen }) {
   };
 
   function handleAddToCart() {
-    let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-    let isInCart = false;
-    let isEmtpy = cartItems.length === 0;
-
-    if (isEmtpy) {
-      cartItems.push({
-        product: product,
-        quantity: number,
-      });
-    }
-
-    if (!isEmtpy) {
-      cartItems.forEach((item) => {
-        if (item.product.id === product.id) {
-          item.quantity += number;
-          isInCart = true;
-        }
-      });
-    }
-
-    if (!isInCart && !isEmtpy) {
-      cartItems = [
-        ...cartItems,
-        {
-          product: product,
-          quantity: number,
-        },
-      ];
-    }
-
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
-    window.dispatchEvent(new Event("cartUpdated"));
+    saveCartItems(product, number);
     setModalOpen(false);
   }
 

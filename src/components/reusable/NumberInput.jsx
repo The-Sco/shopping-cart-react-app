@@ -1,4 +1,4 @@
-import styles from "../../css/custom-components/numberInput.module.css";
+import styles from "../../css/reusable/numberInput.module.css";
 
 function NumberInput({ number, setNumber, name, className }) {
   const numbers = "1234567890";
