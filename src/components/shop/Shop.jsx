@@ -88,25 +88,19 @@ function Shop({ testData = null }) {
             </ul>
           </nav>
         </div>
-      </section>
-      <section className={styles.section}>
         <div>
           <h2>Products: {products.length} results</h2>
         </div>
-        <div
-          className={hasContent ? styles["cards-grid"] : styles["no-content"]}
-        >
-          {hasContent ? (
-            content
-          ) : (
-            <div className={styles["message-wrapper"]}>
-              <p className={styles["message"]}>
-                No items found in this category
-              </p>
-              <i className="fa-solid fa-circle-question"></i>
-            </div>
-          )}
-        </div>
+      </section>
+      <section className={styles.section} data-content={hasContent}>
+        {hasContent ? (
+          <div className={styles["cards-grid"]}>{content}</div>
+        ) : (
+          <div className={styles["message-wrapper"]}>
+            <p className={styles["message"]}>No items found in this category</p>
+            <i className="fa-solid fa-circle-question"></i>
+          </div>
+        )}
       </section>
     </main>
   );

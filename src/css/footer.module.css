@@ -117,6 +117,14 @@
     gap: 4rem;
     justify-content: space-between !important;
   }
+
+  .footer__links h3 {
+    margin: 1rem 0;
+  }
+
+  .footer__links-section {
+    gap: 0;
+  }
 }
 
 @media (max-width: 660px) {
@@ -148,7 +156,10 @@
 
   .footer__links {
     flex-direction: column;
-    gap: 2rem;
+  }
+
+  .footer__links h3 {
+    margin: 0.8rem 0;
   }
 }
 
