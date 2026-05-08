@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { MemoryRouter, Routes, Route } from "react-router";
 import userEvent from "@testing-library/user-event";
-import Header from "../src/components/Header.jsx";
+import Header from "../../src/components/Header.jsx";
 
 describe("Header component", () => {
   it("Renders heading correctly", () => {

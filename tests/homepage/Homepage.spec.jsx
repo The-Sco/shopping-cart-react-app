@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter, Routes, Route } from "react-router";
 import userEvent from "@testing-library/user-event";
-import Homepage from "../src/components/Homepage";
+import Homepage from "../../src/components/homepage/Homepage";
 
 describe("Hero", () => {
   it("Displays heading correctly", () => {

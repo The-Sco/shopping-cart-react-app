@@ -1,7 +1,7 @@
 import { describe, it, expect, vitest } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import LikeButton from "../../src/components/shop/LikeButton";
+import LikeButton from "../../src/components/reusable/LikeButton";
 
 describe("Like button", () => {
   it("adds item ID to localStorage when liked", async () => {

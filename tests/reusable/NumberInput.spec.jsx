@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import NumberInput from "../../src/components/shop/NumberInput";
+import NumberInput from "../../src/components/reusable/NumberInput";
 import { useState } from "react";
 
 function Wrapper({ initialNumber = 1 }) {

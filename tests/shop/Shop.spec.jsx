@@ -62,6 +62,7 @@ describe("Hero", () => {
     ).toBeInTheDocument();
   });
 });
+
 describe("Filters section", () => {
   it("renders the number of products correctly", () => {
     const data = {
@@ -155,6 +156,78 @@ describe("Filters section", () => {
     await user.click(link);
 
     expect(screen.getByRole("heading", { name: /products: 3/i }));
+  });
+});
+
+describe("Cards grid", () => {
+  it("Display products", () => {
+    const data = {
+      furniture: [
+        {
+          id: 1,
+          name: "Modern Sofa",
+          price: "$499.99",
+          image: "../product/furniture/furniture1.webp",
+          category: "Furniture",
+        },
+        {
+          id: 2,
+          name: "Elegant Coffee Table",
+          price: "$199.99",
+          image: "../product/furniture/furniture2.webp",
+          category: "Furniture",
+        },
+      ],
+
+      vase: [
+        {
+          id: 3,
+          name: "Elegant Coffee Table",
+          price: "$199.99",
+          image: "../product/furniture/furniture2.webp",
+          category: "Furniture",
+        },
+        {
+          id: 4,
+          name: "Elegant Coffee Table",
+          price: "$199.99",
+          image: "../product/furniture/furniture2.webp",
+          category: "Furniture",
+        },
+        {
+          id: 5,
+          name: "Elegant Coffee Table",
+          price: "$199.99",
+          image: "../product/furniture/furniture2.webp",
+          category: "Furniture",
+        },
+      ],
+    };
+
+    render(
+      <MemoryRouter initialEntries={["/shop/all"]}>
+        <Routes>
+          <Route path="/shop/:category" element={<Shop testData={data} />} />
+        </Routes>
+      </MemoryRouter>,
+    );
+
+    expect(screen.getAllByTestId("product-card").length).toBe(5);
+  });
+
+  it("Display nothing if no products found", () => {
+    const data = [];
+    render(
+      <MemoryRouter initialEntries={["/shop/all"]}>
+        <Routes>
+          <Route path="/shop/:category" element={<Shop testData={data} />} />
+        </Routes>
+      </MemoryRouter>,
+    );
+
+    expect(
+      screen.getByText(/no items found in this category/i),
+    ).toBeInTheDocument();
   });
 });
 
